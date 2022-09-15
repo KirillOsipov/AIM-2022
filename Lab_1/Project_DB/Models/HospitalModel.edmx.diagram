@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+ <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <!-- Diagram content (shape and connector positions) -->
+    <edmx:Diagrams>
+      <Diagram DiagramId="8e706fea662b4be29d52b2407c4b6ad4" Name="Diagram1">
+        <EntityTypeShape EntityType="CourseworkOsipovModel.Гражданин" Width="1.5" PointX="0.75" PointY="5.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="CourseworkOsipovModel.Заболевания" Width="1.5" PointX="5.25" PointY="5.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="CourseworkOsipovModel.ИзоляцияНаКарантин" Width="1.5" PointX="9.75" PointY="3.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="CourseworkOsipovModel.Кабинеты" Width="1.5" PointX="0.75" PointY="1.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="CourseworkOsipovModel.ЛекарственныеПрепараты" Width="1.5" PointX="7.5" PointY="1.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="CourseworkOsipovModel.Лечение" Width="1.5" PointX="9.75" PointY="7.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="CourseworkOsipovModel.МедицинскийПерсонал" Width="1.5" PointX="3" PointY="5.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="CourseworkOsipovModel.Оборудование" Width="1.5" PointX="7.5" PointY="9.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="CourseworkOsipovModel.Палаты" Width="1.5" PointX="5.25" PointY="9.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="CourseworkOsipovModel.Пациенты" Width="1.5" PointX="7.5" PointY="5" IsExpanded="true" />
+        <AssociationConnector Association="CourseworkOsipovModel.FK_МедицинскийПерсонал_Гражданин" ManuallyRouted="false" />
+        <AssociationConnector Association="CourseworkOsipovModel.FK_Пациенты_Гражданин" ManuallyRouted="false" />
+        <AssociationConnector Association="CourseworkOsipovModel.FK_Пациенты_Заболевания" ManuallyRouted="false" />
+        <AssociationConnector Association="CourseworkOsipovModel.FK_ИзоляцияНаКарантин_Пациенты" ManuallyRouted="false" />
+        <AssociationConnector Association="CourseworkOsipovModel.FK_МедицинскийПерсонал_Кабинеты" ManuallyRouted="false" />
+        <AssociationConnector Association="CourseworkOsipovModel.FK_Лечение_ЛекарственныеПрепараты" ManuallyRouted="false" />
+        <AssociationConnector Association="CourseworkOsipovModel.FK_Лечение_МедицинскийПерсонал" ManuallyRouted="false" />
+        <AssociationConnector Association="CourseworkOsipovModel.FK_Лечение_Оборудование" ManuallyRouted="false" />
+        <AssociationConnector Association="CourseworkOsipovModel.FK_Лечение_Пациенты" ManuallyRouted="false" />
+        <AssociationConnector Association="CourseworkOsipovModel.FK_Палаты_МедицинскийПерсонал" ManuallyRouted="false" />
+        <AssociationConnector Association="CourseworkOsipovModel.FK_Оборудование_Палаты" ManuallyRouted="false" />
+        <AssociationConnector Association="CourseworkOsipovModel.FK_Пациенты_Палаты" ManuallyRouted="false" />
+        <EntityTypeShape EntityType="CourseworkOsipovModel.Аутентификация" Width="1.5" PointX="3.375" PointY="0.75" />
+      </Diagram>
+    </edmx:Diagrams>
+  </edmx:Designer>
+</edmx:Edmx>
