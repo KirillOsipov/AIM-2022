@@ -1,0 +1,31 @@
+﻿@model OsipovCourseWork.Models.Кабинеты
+
+@{
+    ViewBag.Title = "Details";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>Детали</h2>
+
+<div>
+    <h4>Кабинеты</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.Корпус)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Корпус)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Этаж)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Этаж)
+        </dd>
+
+    </dl>
+</div>

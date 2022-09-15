@@ -1,0 +1,24 @@
+﻿@using OsipovCourseWork.Controllers
+
+@if ((UserType)Session["Access"] == UserType.Admin || (UserType)Session["Access"] == UserType.User)
+{
+    using (Html.BeginForm("Logout", "Аутентификация", FormMethod.Post, new { id = "logoutForm", @class = "navbar-right" }))
+    {
+        @Html.AntiForgeryToken()
+
+        <ul class="nav navbar-nav navbar-right">
+            <li style="color:white; padding-top: 15px">
+                Аутентификация пройдена!
+            </li>
+            <li><a href="javascript:document.getElementById('logoutForm').submit()">Выйти</a></li>
+        </ul>
+    }
+}
+else
+{
+    <ul class="nav navbar-nav navbar-right">
+        <li>@Html.ActionLink("Регистрация", "Register", "Аутентификация", routeValues: null, htmlAttributes: new { id = "registerLink" })</li>
+        <li>@Html.ActionLink("Выполнить вход", "Login", "Аутентификация", routeValues: null, htmlAttributes: new { id = "loginLink" })</li>
+    </ul>
+}
+

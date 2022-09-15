@@ -1,0 +1,77 @@
+﻿@model IEnumerable<OsipovCourseWork.Models.Гражданин>
+
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+    int n = 0;
+}
+
+<h2>Граждане</h2>
+
+<p>
+    @Html.ActionLink("Создать", "Create")
+</p>
+<table class="table">
+    <tr>
+        <th>
+            №
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.НомерПаспорта)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Фамилия)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Имя)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Отчество)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.ДатаРождения)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Пол)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Телефон)
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @{ n++; @n; }
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.НомерПаспорта)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Фамилия)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Имя)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Отчество)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.ДатаРождения)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Пол)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Телефон)
+        </td>
+        <td>
+            @Html.ActionLink("Детали", "Details", new { id = item.ИД }) |
+            @Html.ActionLink("Удалить", "Delete", new { id = item.ИД }) |
+            @Html.ActionLink("Редактировать", "Edit", new { id = item.ИД })
+        </td>
+    </tr>
+}
+
+</table>

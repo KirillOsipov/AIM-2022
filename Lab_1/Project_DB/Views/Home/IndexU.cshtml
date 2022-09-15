@@ -1,0 +1,50 @@
+﻿@{
+    ViewBag.Title = "Home Page";
+}
+
+<div class="jumbotron">
+    <h1>Меню</h1>
+</div>
+
+<table class="table">
+    <tr>
+        <td>
+            @Html.ActionLink("Таблица пациентов", "IndexU", "Пациенты")
+        </td>
+        <td>
+            @Html.ActionLink("Таблица персонала", "IndexU", "МедицинскийПерсонал")
+        </td>
+    </tr>
+    <tr>
+        <td>
+            @Html.ActionLink("Таблица лекарств", "IndexU", "ЛекарственныеПрепараты")
+        </td>
+        <td>
+            @Html.ActionLink("Таблица инфекционных заболеваний", "IndexU", "Заболевания")
+        </td>
+    </tr>
+    <tr>
+        <td>
+            @Html.ActionLink("Таблица лечения", "IndexU", "Лечение")
+        </td>
+        <td>
+            @Html.ActionLink("Таблица изоляторов", "IndexU", "ИзоляцияНаКарантин")
+        </td>
+    </tr>
+    <tr>
+        <td>
+            @Html.ActionLink("Таблица палат", "IndexU", "Палаты")
+        </td>
+        <td>
+            @Html.ActionLink("Таблица кабинетов", "IndexU", "Кабинеты")
+        </td>
+    </tr>
+    <tr>
+        <td>
+            @Html.ActionLink("Таблица оборудования", "IndexU", "Оборудование")
+        </td>
+        <td>
+
+        </td>
+    </tr>
+</table>

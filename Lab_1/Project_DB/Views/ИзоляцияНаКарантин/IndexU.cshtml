@@ -1,0 +1,56 @@
+﻿@model IEnumerable<OsipovCourseWork.Models.ИзоляцияНаКарантин>
+
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+    int n = 0;
+}
+
+<h2>Карантинные изоляторы</h2>
+
+<table class="table">
+    <tr>
+        <th>
+            №
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.НачалоКарантина)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.КонецКарантина)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Заболевание)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Пациенты.НомерМедКарты)
+        </th>
+        <th></th>
+    </tr>
+
+    @foreach (var item in Model)
+    {
+        <tr>
+            <td>
+                @{ n++; @n; }
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.НачалоКарантина)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.КонецКарантина)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Заболевание)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Пациенты.НомерМедКарты)
+            </td>
+            <td>
+                @Html.ActionLink("Детали", "Details", new { id = item.НомерИзолятора }) |
+                @Html.ActionLink("Редактировать", "EditU", new { id = item.НомерИзолятора })
+            </td>
+        </tr>
+    }
+
+</table>

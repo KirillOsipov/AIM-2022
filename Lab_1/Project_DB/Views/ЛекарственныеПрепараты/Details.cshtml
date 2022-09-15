@@ -1,0 +1,63 @@
+﻿@model OsipovCourseWork.Models.ЛекарственныеПрепараты
+
+@{
+    ViewBag.Title = "Details";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>Детали</h2>
+
+<div>
+    <h4>ЛекарственныеПрепараты</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.НазваниеПрепарата)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.НазваниеПрепарата)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.ПриЗаболевании)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.ПриЗаболевании)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.КурсПриема)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.КурсПриема)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Применение)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Применение)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Количество)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Количество)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Стоимость)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Стоимость)
+        </dd>
+
+    </dl>
+</div>

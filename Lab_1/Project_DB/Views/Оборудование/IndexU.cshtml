@@ -1,0 +1,62 @@
+﻿@model IEnumerable<OsipovCourseWork.Models.Оборудование>
+
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+    int n = 0;
+}
+
+<h2>Оборудование</h2>
+
+<table class="table">
+    <tr>
+        <th>
+            №
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Наименование)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Количество)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Применение)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Производитель)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Палаты.НомерПалаты)
+        </th>
+        <th></th>
+    </tr>
+
+    @foreach (var item in Model)
+    {
+        <tr>
+            <td>
+                @{ n++; @n; }
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Наименование)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Количество)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Применение)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Производитель)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Палаты.НомерПалаты)
+            </td>
+            <td>
+                @Html.ActionLink("Детали", "Details", new { id = item.ИД_Оборудования }) |
+                @Html.ActionLink("Редактировать", "EditU", new { id = item.ИД_Оборудования })
+            </td>
+        </tr>
+    }
+
+</table>

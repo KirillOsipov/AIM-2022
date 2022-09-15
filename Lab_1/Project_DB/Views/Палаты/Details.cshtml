@@ -1,0 +1,47 @@
+﻿@model OsipovCourseWork.Models.Палаты
+
+@{
+    ViewBag.Title = "Details";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>Детали</h2>
+
+<div>
+    <h4>Палаты</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.КоличествоПациентов)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.КоличествоПациентов)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.КоличествоМест)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.КоличествоМест)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Этаж)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Этаж)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.МедицинскийПерсонал.Должность)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.МедицинскийПерсонал.Должность)
+        </dd>
+
+    </dl>
+</div>

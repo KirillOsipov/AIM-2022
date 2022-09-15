@@ -1,0 +1,68 @@
+﻿@model IEnumerable<OsipovCourseWork.Models.ЛекарственныеПрепараты>
+
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+    int n = 0;
+}
+
+<h2>Лекарственные препараты</h2>
+
+<table class="table">
+    <tr>
+        <th>
+            №
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.НазваниеПрепарата)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.ПриЗаболевании)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.КурсПриема)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Применение)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Количество)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Стоимость)
+        </th>
+        <th></th>
+    </tr>
+
+    @foreach (var item in Model)
+    {
+        <tr>
+            <td>
+                @{ n++; @n; }
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.НазваниеПрепарата)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.ПриЗаболевании)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.КурсПриема)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Применение)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Количество)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Стоимость)
+            </td>
+            <td>
+                @Html.ActionLink("Детали", "Details", new { id = item.ИД_Препарата }) |
+                @Html.ActionLink("Редактировать", "EditU", new { id = item.ИД_Препарата })
+            </td>
+        </tr>
+    }
+
+</table>

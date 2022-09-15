@@ -1,0 +1,58 @@
+﻿@model IEnumerable<OsipovCourseWork.Models.Палаты>
+
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>Палаты</h2>
+
+<p>
+    @Html.ActionLink("Создать", "Create")
+</p>
+<table class="table">
+    <tr>
+        <th>
+            №
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.КоличествоПациентов)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.КоличествоМест)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Этаж)
+        </th>
+        <th>
+            Врач
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.НомерПалаты)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.КоличествоПациентов)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.КоличествоМест)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Этаж)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.МедицинскийПерсонал.Гражданин.Фамилия)
+        </td>
+        <td>
+            @Html.ActionLink("Детали", "Details", new { id = item.НомерПалаты }) | 
+            @Html.ActionLink("Удалить", "Delete", new { id = item.НомерПалаты }) | 
+            @Html.ActionLink("Редактировать", "Edit", new { id = item.НомерПалаты })
+        </td>
+    </tr>
+}
+
+</table>

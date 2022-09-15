@@ -1,0 +1,41 @@
+﻿@model OsipovCourseWork.Models.Кабинеты
+
+@{
+    ViewBag.Title = "Delete";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>Удаление</h2>
+
+<h3>Вы уверены, что хотите удалить этот экземпляр?</h3>
+<div>
+    <h4>Кабинеты</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.Корпус)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Корпус)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Этаж)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Этаж)
+        </dd>
+
+    </dl>
+
+    @using (Html.BeginForm()) {
+        @Html.AntiForgeryToken()
+
+        <div class="form-actions no-color">
+            <input type="submit" value="Delete" class="btn btn-default" /> |
+            @Html.ActionLink("Back to List", "Index")
+        </div>
+    }
+</div>

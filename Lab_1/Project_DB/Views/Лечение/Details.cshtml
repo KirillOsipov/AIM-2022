@@ -1,0 +1,71 @@
+﻿@model OsipovCourseWork.Models.Лечение
+
+@{
+    ViewBag.Title = "Details";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>Детали</h2>
+
+<div>
+    <h4>Лечение</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.ДатаНачала)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.ДатаНачала)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.ДатаОкончания)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.ДатаОкончания)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Цена)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Цена)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.ЛекарственныеПрепараты.НазваниеПрепарата)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.ЛекарственныеПрепараты.НазваниеПрепарата)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.МедицинскийПерсонал.Должность)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.МедицинскийПерсонал.Должность)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Оборудование.Наименование)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Оборудование.Наименование)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Пациенты.НомерМедКарты)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Пациенты.НомерМедКарты)
+        </dd>
+
+    </dl>
+</div>

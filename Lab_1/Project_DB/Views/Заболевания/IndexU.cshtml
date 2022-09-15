@@ -1,0 +1,100 @@
+﻿@model IEnumerable<OsipovCourseWork.Models.Заболевания>
+
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+    int n = 0;
+}
+
+<h2>Инфекционные заболевания</h2>
+
+@using (Html.BeginForm())
+{
+    <h3>Фильтрация и поиск</h3>
+    <p>
+        Фильтрация по инкубационному периоду: от @Html.TextBox("incubLeft") до @Html.TextBox("incubRight")
+    </p>
+    <p>
+        Поиск по названию заболевания: @Html.TextBox("diseaseName")
+    </p>
+    <p>
+        <input type="submit" value="Применить" />
+    </p>
+}
+
+<table class="table">
+    <tr>
+        <th>
+            №
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Название)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.ТипЗаболевания)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Возбудитель)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.МКБ_10)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Смертность)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Воздействие)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Симптомы)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.СпособПередачи)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.ИнкубационныйПериод)
+        </th>
+        <th></th>
+    </tr>
+
+    @foreach (var item in Model)
+    {
+        <tr>
+            <td>
+                @{ n++; @n; }
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Название)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.ТипЗаболевания)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Возбудитель)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.МКБ_10)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Смертность)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Воздействие)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Симптомы)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.СпособПередачи)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.ИнкубационныйПериод)
+            </td>
+            <td>
+                @Html.ActionLink("Детали", "Details", new { id = item.Название }) |
+                @Html.ActionLink("Редактировать", "EditU", new { id = item.Название })
+            </td>
+        </tr>
+    }
+
+</table>

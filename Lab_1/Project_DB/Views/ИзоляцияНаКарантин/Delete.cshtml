@@ -1,0 +1,57 @@
+﻿@model OsipovCourseWork.Models.ИзоляцияНаКарантин
+
+@{
+    ViewBag.Title = "Delete";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>Удаление</h2>
+
+<h3>Вы уверены, что хотите удалить этот экземпляр?</h3>
+<div>
+    <h4>ИзоляцияНаКарантин</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.НачалоКарантина)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.НачалоКарантина)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.КонецКарантина)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.КонецКарантина)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Заболевание)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Заболевание)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Пациенты.НомерМедКарты)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Пациенты.НомерМедКарты)
+        </dd>
+
+    </dl>
+
+    @using (Html.BeginForm()) {
+        @Html.AntiForgeryToken()
+
+        <div class="form-actions no-color">
+            <input type="submit" value="Delete" class="btn btn-default" /> |
+            @Html.ActionLink("Back to List", "Index")
+        </div>
+    }
+</div>

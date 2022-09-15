@@ -1,0 +1,41 @@
+﻿@model IEnumerable<OsipovCourseWork.Models.Кабинеты>
+
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>Кабинеты</h2>
+
+<table class="table">
+    <tr>
+        <th>
+            №
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Корпус)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Этаж)
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.НомерКабинета)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Корпус)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Этаж)
+        </td>
+        <td>
+            @Html.ActionLink("Детали", "Details", new { id = item.НомерКабинета })
+        </td>
+    </tr>
+}
+
+</table>

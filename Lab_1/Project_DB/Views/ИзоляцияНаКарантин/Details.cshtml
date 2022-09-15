@@ -1,0 +1,47 @@
+﻿@model OsipovCourseWork.Models.ИзоляцияНаКарантин
+
+@{
+    ViewBag.Title = "Details";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>Детали</h2>
+
+<div>
+    <h4>ИзоляцияНаКарантин</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.НачалоКарантина)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.НачалоКарантина)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.КонецКарантина)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.КонецКарантина)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Заболевание)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Заболевание)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Пациенты.НомерМедКарты)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Пациенты.НомерМедКарты)
+        </dd>
+
+    </dl>
+</div>

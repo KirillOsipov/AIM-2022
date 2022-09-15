@@ -1,0 +1,147 @@
+﻿@model IEnumerable<OsipovCourseWork.Models.Пациенты>
+
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+    int n = 0;
+}
+
+<h2>Пациенты</h2>
+
+@using (Html.BeginForm())
+{
+    <h3>Фильтрация и поиск</h3>
+    <p>
+        Фильтрация по плате за лечение: от @Html.TextBox("payLeft") до @Html.TextBox("payRight")
+    </p>
+    <p>
+        Поиск по фамилии пациента: @Html.TextBox("surname")
+    </p>
+    <p>
+        <input type="submit" value="Применить" />
+    </p>
+}
+
+@using (Html.BeginForm())
+{
+    <h3>Расчет средней цены лечения болезни</h3>
+    <p>
+        Средняя плата за лечение от данной болезни: @Html.TextBox("disease") Результат: @ViewBag.avgPay
+    </p>
+    <p>
+        <input type="submit" value="Посчитать" /> <br />
+    </p>
+}
+
+<table class="table">
+    <tr>
+        <th>
+            №
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.FirstOrDefault().Гражданин.НомерПаспорта)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.FirstOrDefault().Гражданин.Фамилия)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.FirstOrDefault().Гражданин.Имя)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.FirstOrDefault().Гражданин.Отчество)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.FirstOrDefault().Гражданин.ДатаРождения)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.FirstOrDefault().Гражданин.Пол)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.FirstOrDefault().Гражданин.Телефон)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.FirstOrDefault().НомерМедКарты)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.FirstOrDefault().ДатаПоступления)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.FirstOrDefault().ДатаВыписки)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.FirstOrDefault().ПлатаЗаЛечение)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.FirstOrDefault().РезультатЛечения)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.FirstOrDefault().Гражданин.НомерПаспорта)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.FirstOrDefault().Диагноз)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.FirstOrDefault().Палаты.НомерПалаты)
+        </th>
+        <th></th>
+    </tr>
+
+    @foreach (var item in Model)
+    {
+        <tr>
+            <td>
+                @{ n++; @n; }
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Гражданин.НомерПаспорта)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Гражданин.Фамилия)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Гражданин.Имя)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Гражданин.Отчество)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Гражданин.ДатаРождения)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Гражданин.Пол)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Гражданин.Телефон)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.НомерМедКарты)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.ДатаПоступления)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.ДатаВыписки)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.ПлатаЗаЛечение)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.РезультатЛечения)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Гражданин.НомерПаспорта)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Диагноз)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Палаты.НомерПалаты)
+            </td>
+            <td>
+                @Html.ActionLink("Детали", "Details", new { id = item.ИД }) | 
+                @Html.ActionLink("Редактировать", "EditU", new { id = item.ИД })
+            </td>
+        </tr>
+    }
+
+</table>

@@ -1,0 +1,113 @@
+﻿@model IEnumerable<OsipovCourseWork.Models.МедицинскийПерсонал>
+
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+    int n = 0;
+}
+
+<h2>Медицинский персонал</h2>
+
+<p>
+    @Html.ActionLink("Создать", "Create")
+</p>
+<table class="table">
+    <tr>
+        <th>
+            №
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Гражданин.НомерПаспорта)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Гражданин.Фамилия)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Гражданин.Имя)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Гражданин.Отчество)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Гражданин.ДатаРождения)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Гражданин.Пол)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Гражданин.Телефон)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.ДатаПринятияНаРаботу)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Должность)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Квалификация)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Зарплата)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Гражданин.НомерПаспорта)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Кабинеты.НомерКабинета)
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @{ n++; @n; }
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Гражданин.НомерПаспорта)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Гражданин.Фамилия)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Гражданин.Имя)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Гражданин.Отчество)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Гражданин.ДатаРождения)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Гражданин.Пол)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Гражданин.Телефон)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.ДатаПринятияНаРаботу)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Должность)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Квалификация)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Зарплата)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Гражданин.НомерПаспорта)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Кабинеты.НомерКабинета)
+        </td>
+        <td>
+            @Html.ActionLink("Детали", "Details", new { id = item.ИД }) | 
+            @Html.ActionLink("Удалить", "Delete", new { id = item.ИД }) | 
+            @Html.ActionLink("Редактировать", "Edit", new { id = item.ИД })
+        </td>
+    </tr>
+}
+
+</table>

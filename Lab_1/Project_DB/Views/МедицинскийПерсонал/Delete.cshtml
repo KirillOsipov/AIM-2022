@@ -1,0 +1,73 @@
+﻿@model OsipovCourseWork.Models.МедицинскийПерсонал
+
+@{
+    ViewBag.Title = "Delete";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>Удаление</h2>
+
+<h3>Вы уверены, что хотите удалить этот экземпляр?</h3>
+<div>
+    <h4>МедицинскийПерсонал</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.ДатаПринятияНаРаботу)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.ДатаПринятияНаРаботу)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Должность)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Должность)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Квалификация)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Квалификация)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Зарплата)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Зарплата)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Гражданин.НомерПаспорта)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Гражданин.НомерПаспорта)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Кабинеты.НомерКабинета)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Кабинеты.НомерКабинета)
+        </dd>
+
+    </dl>
+
+    @using (Html.BeginForm()) {
+        @Html.AntiForgeryToken()
+
+        <div class="form-actions no-color">
+            <input type="submit" value="Delete" class="btn btn-default" /> |
+            @Html.ActionLink("Back to List", "Index")
+        </div>
+    }
+</div>
